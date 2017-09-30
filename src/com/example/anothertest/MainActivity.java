@@ -4,13 +4,24 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		initView();
+		
+	}
+
+	private void initView() {
+		// TODO Auto-generated method stub
+		findViewById(R.id.textView1).setOnClickListener(this);;
+		findViewById(R.id.textView2).setOnClickListener(this);
 	}
 
 	@Override
@@ -30,5 +41,16 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()){
+		case R.id.textView1:
+			break;
+		case R.id.textView2:
+			break;
+		}
 	}
 }
